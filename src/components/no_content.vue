@@ -10,14 +10,18 @@
 <script>
 export default {
   props: ['no_cont'],
+
   data () {
     return {
-      height: wx.getSystemInfoSync().screenHeight
+      // height: wx.getSystemInfoSync().screenHeight || '667'
+      height: document.body.scrollWidth
     }
   },
+
   onUnload () {
     this.no_cont.show = 0
   },
+
   watch: {
     no_cont: {
       immediate: true,
@@ -31,4 +35,3 @@ export default {
 <style lang="scss" scoped>
   @import './../style/compoments.scss';
 </style>
-

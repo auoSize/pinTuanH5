@@ -1,6 +1,6 @@
 <template>
 <div class="container order">
-    <nav-bar :navBar="navBar"/>
+    <!-- <nav-bar :navBar="navBar"/> -->
 
     <div class="order_menu" id="order_menu" :style="{top: nav_height + 'px'}">
       <ul>
@@ -46,7 +46,7 @@
 
 <script>
 import { mapState } from 'vuex'
-import navBar from '@/components/nav_bar'
+// import navBar from '@/components/nav_bar'
 import tips from '@/components/tips'
 import noContent from '@/components/no_content'
 import { my_group_list } from '@/api/index'
@@ -105,7 +105,7 @@ export default {
   },
 
   components: {
-    navBar,
+    // navBar,
     tips,
     noContent
   },

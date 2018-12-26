@@ -3,8 +3,10 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import store from './store'
 import 'vue2-toast/lib/toast.css'
 import Toast from 'vue2-toast'
+import 'lib-flexible/flexible.js'
 
 Vue.config.productionTip = false
 
@@ -19,6 +21,7 @@ Vue.use(Toast, {
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

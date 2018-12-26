@@ -41,7 +41,6 @@ fly.interceptors.request.use((request) => {
 
 fly.interceptors.response.use(
   (response) => {
-    wx.hideLoading()
     if (response.data.data.token) {
       userTkone = response.data.data.token
     }

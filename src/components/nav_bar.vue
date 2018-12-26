@@ -15,12 +15,12 @@ export default {
   props: {
     navBar: {
       type: Object,
-      default: {
+      default: () => [{
         title: '',
         background: '#FFFFFF',
         back_show: false,
         custom_url: false
-      }
+      }]
     }
   },
   data () {
@@ -42,30 +42,30 @@ export default {
       }
     },
     set_nab_bar () {
-      var query = wx.createSelectorQuery()
-      var that = this
-      query.select('#nav-bar').boundingClientRect(function (rect) {
-        that.$store.commit('SET_KEY_VALUE', {
-          key: 'nav_bar',
-          value: {
-            nav_height: rect.height + that.statusBarHeight,
-            statusBarHeight: that.statusBarHeight,
-            margin_top: `margin-top: ${rect.height + that.statusBarHeight}px`
-          }
-        })
-      }).exec()
+      // var query = wx.createSelectorQuery()
+      // var that = this
+      // query.select('#nav-bar').boundingClientRect(function (rect) {
+      //   that.$store.commit('SET_KEY_VALUE', {
+      //     key: 'nav_bar',
+      //     value: {
+      //       nav_height: rect.height + that.statusBarHeight,
+      //       statusBarHeight: that.statusBarHeight,
+      //       margin_top: `margin-top: ${rect.height + that.statusBarHeight}px`
+      //     }
+      //   })
+      // }).exec()
     }
   },
   created () {
     let that = this
     that.statusBarHeight = that.nav_bar.statusBarHeight
     if (!that.nav_bar || that.nav_bar.nav_height === 0 || that.nav_bar.margin_top === '' || that.nav_bar.statusBarHeight === 0) {
-      wx.getSystemInfo({
-        success (res) {
-          that.statusBarHeight = res.statusBarHeight
-          that.set_nab_bar()
-        }
-      })
+      // wx.getSystemInfo({
+      //   success (res) {
+      //     that.statusBarHeight = res.statusBarHeight
+      //     that.set_nab_bar()
+      //   }
+      // })
     }
   }
 }

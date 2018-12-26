@@ -7,59 +7,59 @@ import {
 export default {
   // 登录 - 授权
   wx_login: ({state, dispatch, commit}) => {
-    let appid, code
-    wx.getExtConfig({
-      success: res => {
-        appid = res.extConfig.appId
-        commit('SET_KEY_VALUE', {
-          key: 'appid',
-          value: res.extConfig.appId
-        })
-        wx.login({
-          success: res => {
-            code = res.code
-            if (res.code) {
-              wx.getUserInfo({
-                success: res => {
-                  commit('SET_PROGRAM_INFO', {
-                    code,
-                    appid,
-                    encryptedData: res.encryptedData,
-                    rawData: res.rawData,
-                    signature: res.signature
-                  })
-                  commit('SET_KEY_VALUE', {key: 'user_info', value: res.userInfo})
-                  dispatch('we_chat_auth')
-                }
-              })
-            }
-          },
-          fail: () => {}
-        })
-      }
-    })
+    // let appid, code
+    // wx.getExtConfig({
+    //   success: res => {
+    //     appid = res.extConfig.appId
+    //     commit('SET_KEY_VALUE', {
+    //       key: 'appid',
+    //       value: res.extConfig.appId
+    //     })
+    //     wx.login({
+    //       success: res => {
+    //         code = res.code
+    //         if (res.code) {
+    //           wx.getUserInfo({
+    //             success: res => {
+    //               commit('SET_PROGRAM_INFO', {
+    //                 code,
+    //                 appid,
+    //                 encryptedData: res.encryptedData,
+    //                 rawData: res.rawData,
+    //                 signature: res.signature
+    //               })
+    //               commit('SET_KEY_VALUE', {key: 'user_info', value: res.userInfo})
+    //               dispatch('we_chat_auth')
+    //             }
+    //           })
+    //         }
+    //       },
+    //       fail: () => {}
+    //     })
+    //   }
+    // })
   },
 
   // 查询是否已经登陆过
   wx_get_check_session: ({state, dispatch, commit}, roots) => {
-    wx.checkSession({
-      success: (res) => {
-        dispatch('wx_login')
-      },
-      fail: () => {
-        roots.$router.push('/pages/authorize/index')
-      }
-    })
+    // wx.checkSession({
+    //   success: (res) => {
+    //     dispatch('wx_login')
+    //   },
+    //   fail: () => {
+    //     roots.$router.push('/pages/authorize/index')
+    //   }
+    // })
   },
 
   // 获取用户信息
   get_user_info: ({dispatch, commit}) => {
-    wx.getUserInfo({
-      success: res => {
-        commit('SET_USER_INFO', res.userinfo)
-        return res
-      }
-    })
+    // wx.getUserInfo({
+    //   success: res => {
+    //     commit('SET_USER_INFO', res.userinfo)
+    //     return res
+    //   }
+    // })
   },
 
   /*
@@ -82,24 +82,15 @@ export default {
           value: true
         })
       } else {
-        wx.showToast({
-          title: res.message,
-          icon: 'success',
-          duration: 2000
-        })
+        // wx.showToast({
+        //   title: res.message,
+        //   icon: 'success',
+        //   duration: 2000
+        // })
         setTimeout(() => {
-          wx.hideToast()
+          // wx.hideToast()
         }, 1500)
       }
-    }).catch(err => {
-      wx.showToast({
-        title: err.message,
-        icon: 'success',
-        duration: 2000
-      })
-      setTimeout(() => {
-        wx.hideToast()
-      }, 1500)
     })
   },
 

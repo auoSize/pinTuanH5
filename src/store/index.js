@@ -16,12 +16,13 @@ export default new Vuex.Store({
   mutations,
   getters,
   plugins: [
-    createPersistedState({
-      storage: {
-        getItem: key => wx.getStorageSync(key),
-        setItem: (key, value) => wx.setStorageSync(key, value),
-        removeItem: key => {}
-      }
-    })
+    // createPersistedState({
+    //   storage: {
+    //     getItem: key => wx.getStorageSync(key),
+    //     setItem: (key, value) => wx.setStorageSync(key, value),
+    //     removeItem: key => {}
+    //   }
+    // })
+    createPersistedState({ storage: window.sessionStorage })
   ]
 })

@@ -104,16 +104,16 @@ export default {
     },
     // 获取活动列表
     async get_activity () {
-      wx.showLoading({
-        title: '加载中...', // 提示的内容,
-        mask: true
-      })
+      // wx.showLoading({
+      //   title: '加载中...', // 提示的内容,
+      //   mask: true
+      // })
       let opstions = {
         page_index: this.page_info.page_index,
         status: 0
       }
       let res = await activity(opstions).catch(err => {
-        wx.hideLoading()
+        // wx.hideLoading()
         if (err === '用户未登录') {
           this.$router.push('/pages/authorize/index')
         } else {
@@ -122,12 +122,12 @@ export default {
         }
       })
       if (res.code === 200) {
-        wx.hideLoading()
+        // wx.hideLoading()
         Object.assign(this.page_info, { total_count: Math.ceil(res.data.totalCount * 1 / res.data.pageSize * 1) })
         this.goods_list = this.goods_list.length === 0 ? res.data.result : this.goods_list.concat(res.data.result)
         this.no_cont.show = res.data.result.length === 0 ? 1 : 0
       } else {
-        wx.hideLoading()
+        // wx.hideLoading()
         Object.assign(this.tips, {isShow: true, text: res.message})
         this.setTips()
       }
@@ -146,7 +146,7 @@ export default {
     this.goods_list = []
     this.page_info.page_index = 1
     this.get_activity()
-    wx.stopPullDownRefresh()
+    // wx.stopPullDownRefresh()
   },
 
   onReachBottom () {
