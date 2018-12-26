@@ -1,0 +1,2 @@
+const REGISTER_TIMER = 60
+export { REGISTER_TIMER }

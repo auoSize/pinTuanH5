@@ -1,0 +1,261 @@
+@import './common.scss';
+
+.address-list{
+  .lsit-content{
+    ul{
+      width: $width;
+      li{
+        width: $width;
+        background-color: $color;
+        position: relative;
+        padding: 30px 0;
+        margin-bottom: 20px;
+        .address_content{
+          margin: 0 113px 0 73px;
+          .name-phone{
+            display: flex;
+            font-size: 30px;
+            color: #515151;
+            font-weight: bold;
+            .phone{
+              margin-left: 60px;
+            }
+          }
+          .address{
+            font-size: 24px;
+            color: #515151;
+            margin-top: 10px;
+          }
+        }
+        .default_address{
+          width: 28px;
+          height: 28px;
+          border-radius: 100%;
+          overflow: hidden;
+          font-size: 0;
+          position: absolute;
+          left: 20px;
+          top: 50%;
+          margin-top: -14px;
+          img{
+            width: $width;
+            height: $width;
+          }
+          .default{
+            display: block;
+          }
+          .normal{
+            display: none;
+          }
+        }
+        .arrow{
+          padding: 20px 30px;
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          img{
+            width: 28px;
+            height: 26px;
+          }
+        }
+        &.active{
+          .default{
+            display: none;
+          }
+          .normal{
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+
+.btn{
+  width: 580px;
+  height: 88px;
+  text-align: center;
+  line-height: 88px;
+  background: rgb(255,240,1);
+  font-size: 34px;
+  color: #1a1a1a;
+  border-radius: 0;
+  position: fixed;
+  left: 50%;
+  bottom: 30px;
+  margin-left: -290px;
+  &::after{
+    border: none;
+  }
+  &[disabled], &.disabled{
+    background: #E8E8E8;
+    color: #575757;
+  }
+}
+
+// 新增地址
+.from_content{
+  position: relative;
+  // background: #fff;
+}
+
+.from_group{
+  width: 100%;
+  background: #fff;
+  input{
+    width: 625px;
+    min-height: 40px;
+    font-size: 28px;
+    border-radius: 0;
+    vertical-align: middle;
+    padding: 30px 0 25px 30px;
+    color: #515151;
+    &::after{
+      border: none;
+    }
+    &::placeholder {
+      color: #cccccc;
+    }
+    &.input-placeholder{
+      color: #cccccc;
+    }
+  }
+  textarea{
+    width: 625px;
+    height: 80px;
+    font-size: 28px;
+    padding: 20px 0 30px 30px;
+    color: #515151;
+    border: none;
+    border-radius: 0;
+  }
+}
+
+.border_bottom{
+  border-bottom: 1px solid #eeeeee;
+}
+
+.err_tips{
+  font-size: 24px;
+  color: #ff6640;
+  padding: 0 0 19px 30px;
+}
+
+.weui-btn{
+  width: 100%;
+  position: relative;
+  .fake-intput{
+    width: 625px;
+    min-height: 40px;
+    font-size: 28px;
+    border-radius: 0;
+    vertical-align: middle;
+    padding: 30px 0 30px 30px;
+    color: #515151;
+    &.p-class{
+      color: #cccccc
+    }
+  }
+  .region_arrow{
+    width: 11px;
+    height: 20px;
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    margin-top: -10px;
+    font-size: 0;
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.from_details{
+  padding-bottom: 20px;
+}
+
+.phone_icon{
+  flex: 1;
+  background: $color;
+  text-align: center;
+  border: none;
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+  img{
+    display: block;
+    width: 58px;
+    height: 55px;
+  }
+  div{
+    font-size: 24px;
+    color: #484848;
+    margin-top: 17px;
+  }
+}
+
+.form_name{
+  width: 540px;
+}
+
+.other{
+  display: flex;
+
+}
+
+.from_code{
+ width: $width ;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ background: #fff;
+ .send_code{
+    font-size: 28px;
+    color: #CECECE;
+    text-align: right;
+    margin-right: 30px;
+    &.normal{
+      color: #FFAA01;
+    }
+ }
+}
+
+.default_address_icon{
+  background: $color;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 19px 0;
+  .text{
+    font-size: 28px;
+    color: #555555;
+    margin-left: 30px;
+  }
+  .icon{
+    width: 109px;
+    height: 60px;
+    font-size: 0;
+    margin-right: 30px;
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.delete_address{
+  .text {
+    color:#d44950;
+  }
+}
+
+.iPhonex_bottom{
+  bottom: 128px;
+}
+.iPhonex_padding_bottom{
+  margin-bottom: 68px;
+}

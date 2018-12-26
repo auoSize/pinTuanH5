@@ -1,0 +1,11 @@
+export const SET_TKONE = 'SET_TKONE' // tkone
+export const SET_STATUS = 'SET_STATUS' // 参团状态
+export const SET_ORDER_MENU = 'SET_ORDER_MENU' // 订单选中状态
+export const SET_USER_INFO = 'SET_USER_INFO' // 用户信息
+export const SET_PROGRAM_INFO = 'SET_PROGRAM_INFO' // 小程序信息
+export const SET_KEY_VALUE = 'SET_KEY_VALUE' // 更新值 key - value
+export const SET_NAV_BAR = 'SET_NAV_BAR' // nav_bar 自定义导航
+export const SET_ACTIVITY_ID = 'SET_ACTIVITY_ID' // activity_id 查看我的团
+export const SET_CHOOSE_GOODS = 'SET_CHOOSE_GOODS' // choose_goods 选购商品
+export const SET_SHARE_INFO = 'SET_SHARE_INFO' // share_info 分享信息
+export const SET_ROUTER_INFO = 'SET_ROUTER_INFO' // router_info

@@ -1,0 +1,532 @@
+@import './common.scss';
+
+// order
+.order_menu{
+  width: $width;
+  background: $color;
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  z-index: 9;
+  ul{
+    margin: 0 24px 0 36px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    li{
+      font-family: $font-family-PingFangSC-Regular;
+      font-size: $font-size-26;
+      color: $font-color-order;
+      padding: 22px 0 20px;
+      border-bottom: 2px solid $color;
+      &.active{
+        // color: $font-color-blue;
+        // border-color: $font-color-blue;
+        color: #FFAA01;
+        border-color: #FFC901;
+      }
+    }
+  }
+}
+
+.order_content{
+  width: $width;
+  margin-bottom: 68px;
+  ul {
+    width: $width;
+  }
+}
+
+.order_list{
+  width: $width;
+  margin-top:  20px;
+  background: $color;
+  .title{
+    font-family: $font-family-PingFangSC-Regular;
+    font-size: $font-size-24;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    margin: 0 30px;
+    .title_name{
+      max-width: 83%;
+      color: #363636;
+    }
+    .title_status{
+      color: #FFAF11;
+      &.status_success {
+        color: $font-color-status-success;
+      }
+    }
+  }
+  .content{
+    // background: $bg-color-2;
+    padding: 30px 0;
+    display: flex;
+    border-top: 1px solid #EEEEEE;
+    border-bottom: 1px solid #EEEEEE;
+    .order_img{
+      width: 134px;
+      height: 134px;
+      margin: 0 20px 0 30px;
+      img{
+        width: $width;
+        height: $width;
+      }
+    }
+    .order_info{
+      flex: 2;
+      margin-right: 30px;
+      position: relative;
+      .order_name{
+        max-width: 428px;
+        font-family: $font-family-PingFangSC-Regular;
+        font-size: $font-size-28;
+        color:rgba(0,0,0,0.85);
+        line-height: 40px;
+        font-weight: bold;
+      } 
+      .type{
+        font-size: 24px;
+        color: rgba(37,37,37, 0.25);
+        line-height: 32px;
+      }
+      .order_number_price{
+        width: $width;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: $font-family-PingFangSC-Regular;
+        font-size: $font-size-24;
+        text-align: right;
+        .order_price{
+          color: #FF6640;
+          line-height: 32px;
+          font-size: 24px;
+          span{
+            font-size: 30px;
+          }
+        }
+        .order_number{
+          color: #252525;
+          line-height: 32px;
+        }
+      }
+    }
+  }
+  .operation{
+    overflow: hidden;
+    margin: 0 30px;
+    padding: 15px 0;
+    button{
+      float: right;
+      line-height: 32px;
+      padding: 8px 20px;
+      text-align: center;
+      border: $border-D3;
+      font-family: $font-family-PingFangSC-Regular;
+      font-size: $font-size-24;
+      color: $color-order-btn;
+      background: $color;
+      border-radius: 0;
+      margin-left: 20px;
+      &::after{
+        border: none; 
+      }
+    }
+  }
+  .select_number{
+    margin: 0 30px;
+    padding: 30px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .text{
+      font-size: 26px;
+      color: #313131;
+      line-height: 36px;
+    }
+    .select{
+      span{
+        display: inline-block;
+      }
+      .reduce, .add{
+        font-size: 32px;
+        color: #313131;
+      }
+      .input{
+        font-size: 26px;
+        color: #313131;
+        width: 82px;
+        height: 44px;
+        background: #F6F6F6;
+        vertical-align: middle;
+        border: none;
+        border-radius: 0;
+        text-align: center;
+        margin: 0 15px;
+        &::after{
+          border: none;
+        }
+      }
+    }
+  }
+}
+
+// order-details
+.order_details{
+  padding-bottom: 20px;
+  .order_details_content{
+    margin: 0 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    .header{
+      padding-top: 18px;
+      overflow: hidden;
+      position: relative;
+      .heaer_info{
+        margin-top: 70px;
+        background: $color;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+        p{
+          width: 88%;
+          padding: 100px 0 32px;
+          margin: 0 auto;
+          font-family: $font-family-PingFangSC-Semibold;
+          font-size: $font-size-30;
+          color: $font-color-one;
+          letter-spacing: 0;
+          text-align: center;
+          border-bottom: $border-dashed-97;
+          font-weight: bold;
+        }
+      }
+      .order_details_avatar{
+        width: 156px;
+        height: 156px;
+        border-radius: 78px;
+        overflow: hidden;
+        background: $body-color;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        margin-left: -78px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .order_details_avatar_img{
+          width: 140px;
+          height: 140px;
+          border-radius: 70px;
+          overflow: hidden;
+          img{
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    .order_details_info{
+      padding: 28px 0 38px;
+      background: $color;
+      display: flex;
+      .order_img{
+        width: 176px;
+        height: 176px;
+        border-radius: 10px;
+        overflow: hidden;
+        margin: 0 24px 0 20px;
+        img{
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .oder_info{
+        flex: 2;
+        margin-right: 20px;
+        .order_info_name{
+          font-family: $font-family-PingFangSC-Regular;
+          font-size: $font-size-30;
+          color: $font-color-one;
+          line-height: 44px;
+        }
+        .order_info_price{
+          font-family: $font-family-PingFangSC-Regular;
+          font-size: $font-size-28;
+          color: $font-color-one;
+          letter-spacing: 0;
+          line-height: 40px;
+          span{
+            font-family: $font-family-PingFangSC-Semibold;
+            font-size: $font-size-28;
+            color: $font-color-price-blod;
+            letter-spacing: 0;
+            line-height: 50px;
+          }
+          .number{
+            font-family: $font-family-DINAlternate-Bold;
+            font-size: $font-size-60;
+            letter-spacing: 0;
+          }
+        }
+        .price_left{
+          display: inline-block;
+          margin-left: 20px;
+        }
+        .order_info_origin_price{
+          font-family: $font-family-PingFangSC-Regular;
+          font-size: $font-size-28;
+          color: $font-color-one;
+          letter-spacing: 0;
+          span{
+            text-decoration:line-through;
+            line-height: 40px;
+          }
+          .number{
+            line-height: 50px;
+            display: inline-block;
+          }
+        }
+      }
+    }
+
+    .segmenting_line{
+      height: 36px;
+      background: $color;
+      overflow: hidden;
+      position: relative;
+      .semicircle{
+        width: 36px;
+        height: 100%;
+        border-radius: 18px;
+        overflow: hidden;
+        background: $body-color;
+        position: absolute;
+        top:0;
+      }
+      .semicircle_left{
+        left: -18px;
+      }
+      .semicircle_right{
+        right: -18px;
+      }
+      .content{
+        width: 88%;
+        height: 50%;
+        border-bottom: $border-dashed-97;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%)
+      }
+    }
+
+    .order_details_code{
+      padding: 20px 0 30px;
+      background: $color;
+      border-bottom-left-radius: 12px;
+      border-bottom-right-radius: 12px;
+      .code_title{
+        font-family: $font-family-PingFangSC-Semibold;
+        font-size: $font-size-30;
+        color: $font-color-one;
+        line-height: 44px;
+        margin: 0 40px;
+      }
+      .term_validity{
+        font-family: $font-family-PingFangSC-Regular;
+        font-size: $font-size-24;
+        color: $font-color-normal;
+        letter-spacing: 0;
+        margin: 10px 40px 0;
+        line-height: 32px;
+      }
+      .code_img{
+        width: 328px;
+        height: 328px;
+        margin: 40px auto;
+        img{
+          width: 100%;
+          height: 100%;
+        }
+        .my_canvas{
+          width: 300px;
+          height: 300px;
+        }
+      }
+      .serial_number{
+        width: 548px;
+        margin: 0 auto 20px;
+        border: $border-dashed-00;
+        font-family: $font-family-PingFangSC-Regular;
+        font-size: $font-size-28;
+        color: $font-color-normal;
+        letter-spacing: 0;
+        text-align: center;
+        line-height: 40px;
+        padding: 20px 0;
+        span{
+          color: $font-color-one;
+        }
+      }
+      .prompt{
+        font-family: $font-family-PingFangSC-Regular;
+        font-size: $font-size-24;
+        color: $font-color-prompt;
+        text-align: center;
+        line-height: 32px;
+      }
+    }
+  }
+}
+.order_details_notes{
+  margin-bottom: 68px;
+}
+
+// place_order
+.place_order_content{
+  width: $width;
+  overflow: hidden;
+  .receiving_address{
+    width: $width;
+    background: $color;
+    overflow: hidden;
+    .address_content{
+      width: $width;
+      position: relative;
+    }
+    .address_icon{
+      display: inline-block;
+      width: 26px;
+      height: 33px;
+      font-size: 0;
+      position: absolute;
+      left: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+      img{
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+    .address_cont{
+      padding: 30px 0;
+      margin: 0 74px;
+      .name_phone{
+        text-align: left;
+      }
+      .name{
+        font-size: 26px;
+        color: #454444;
+        letter-spacing: 0;
+        line-height: 50px;
+        display: flex;
+        justify-content: space-between;
+        .name_text{
+          font-size: 28;
+          font-weight: bold;
+          color: "#242323"
+        }
+      }
+      .address{
+        display: block;
+        font-size: 26px;
+        color: #454444;
+        letter-spacing: 0;
+      }
+    }
+    .arrow{
+      width: 14px;
+      height: 23px;
+      position: absolute;
+      right: 27px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0;
+      img{
+        width: $width;
+        height: $width;
+      }
+    }
+    .address_none{
+      font-size: 26px;
+      color: #898989;
+      letter-spacing: 0;
+      padding: 30px 0;
+      .name, .phone{
+        font-size: 26px;
+        color: #898989;
+      }
+    }
+    .stamp-line{
+      width: $width;
+      height: 8px;
+      font-size: 0;
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .goods_info{
+    .content{
+      border: none;
+    }
+    .select_number{
+      display: none;
+    }
+  }
+  .place{
+    padding-bottom: 20px;
+  }
+  .order_operation{
+    width: $width;
+    height: 88px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background: $color;
+    box-shadow: 0 -1px 0 0 rgba(0,0,0,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .total{
+      display: inline-block;
+      font-size: 28px;
+      color: #272727;
+      line-height: 40px;
+      margin-left: 30px;
+      span{
+        font-size: 35px;
+        color: #FF6640;
+      }
+    }
+    .send_button{
+      width: 230px;
+      height: $width;
+      background: #FFF001;
+      button{
+        width: $width;
+        height: $width;
+        line-height: 88px;
+        background: #FFF001;
+        font-size: 32px;
+        color: #404040;
+        letter-spacing: 0;
+        text-align: center;
+        border-radius: 0;
+        &::after{
+          border: none;
+        }
+      }
+    }
+  }
+}
+

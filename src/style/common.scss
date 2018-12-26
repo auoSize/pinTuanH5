@@ -1,0 +1,76 @@
+
+//font-family
+$font-family-PingFangSC-Regular: PingFangSC-Regular;
+$font-family-PingFangSC-Medium: PingFangSC-Medium;
+$font-family-DINAlternate-Bold: DINAlternate-Bold;
+$font-family-PingFangSC-Semibold: PingFangSC-Semibold;
+
+
+// font-size
+$font-size-14: 14px;
+$font-size-20: 20px;
+$font-size-22: 22px;
+$font-size-24: 24px;
+$font-size-26: 26px;
+$font-size-28: 28px;
+$font-size-30: 30px;
+$font-size-32: 32px;
+$font-size-34: 34px;
+$font-size-36: 36px;
+$font-size-54: 54px;
+$font-size-60: 60px;
+
+//color
+$font-color-one: #000000;
+$font-color-two: #898989;
+$font-color-there: #595959;
+$font-color-foure: #333333;
+$font-color-five: #999999;
+$font-color-six: #1A1A1A;
+$font-color-blue: #4C84FF;
+$font-color-price-blod: #FF4D20;
+$font-color-price: #002021;
+$font-color-legend: #A8A8A8;
+$font-color-name: #242323;
+$font-color-order: #484848;
+$font-color-order-title: #313131;
+$font-color-order-status: #E16F15;
+$font-color-status-success: #363636;
+$font-color-input-default: #CCCCCC;
+$font-color-input: #262626;
+$font-color-normal: #9C9C9C;
+$font-color-prompt: #9D9D9D;
+
+$body-color: #F4F4F4;
+$color: #FFFFFF;
+$color-order-btn: #272727 ;
+$bg_color: #FFF001;
+$bg-color-fff: rgba(255,255,255,0.4);
+$bg-color-1: rgba(255,255,255,0.8);
+$bg-color-2: #FAFAFA;
+$bg-color-default: #E0E0E0;
+
+// number
+$width: 100%;
+
+// border
+$border: 1px solid #E7E7E7;
+$border-D3: 1px solid #D3D3D3;
+$border-dashed-97: 1px dashed #979797;
+$border-dashed-00:  1px solid rgba(0,0,0,0.2);
+
+// 溢出省略
+.text-overflow{
+  overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap
+}
+
+.text-overflow-two{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
