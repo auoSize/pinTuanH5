@@ -1,6 +1,6 @@
 <template>
   <div class="container index">
-    <nav-bar :navBar="navBar"/>
+    <p>index</p>
     <div class="container-content" :style="margin_top">
       <div class="index-container" v-if="!authSetting">
         <ul class="goods-list" v-if="goods_list && goods_list.length !== 0">
@@ -38,7 +38,6 @@
 <script>
 import userInfo from '@/mixins/user_info'
 import { mapState } from 'vuex'
-import navBar from '@/components/nav_bar'
 import tips from '@/components/tips'
 import noContent from '@/components/no_content'
 import { activity } from '@/api/index'
@@ -46,10 +45,6 @@ import { activity } from '@/api/index'
 export default {
   data () {
     return {
-      navBar: {
-        title: '不二拼团',
-        back_show: false
-      },
       no_cont: {
         show: false,
         text: '暂时没有活动'
@@ -73,13 +68,13 @@ export default {
     ...mapState({
       token: state => state.token,
       token_state: state => state.token_state,
-      isSend: state => state.isSend
+      isSend: state => state.isSend,
+      authSetting: state => state.authSetting
     })
   },
 
   components: {
     tips,
-    navBar,
     noContent
   },
 
@@ -104,16 +99,13 @@ export default {
     },
     // 获取活动列表
     async get_activity () {
-      // wx.showLoading({
-      //   title: '加载中...', // 提示的内容,
-      //   mask: true
-      // })
+      this.$loading('加载中...')
       let opstions = {
         page_index: this.page_info.page_index,
         status: 0
       }
       let res = await activity(opstions).catch(err => {
-        // wx.hideLoading()
+        this.$loading.close()
         if (err === '用户未登录') {
           this.$router.push('/pages/authorize/index')
         } else {
@@ -122,14 +114,26 @@ export default {
         }
       })
       if (res.code === 200) {
-        // wx.hideLoading()
+        this.$loading.close()
         Object.assign(this.page_info, { total_count: Math.ceil(res.data.totalCount * 1 / res.data.pageSize * 1) })
         this.goods_list = this.goods_list.length === 0 ? res.data.result : this.goods_list.concat(res.data.result)
         this.no_cont.show = res.data.result.length === 0 ? 1 : 0
       } else {
-        // wx.hideLoading()
+        this.$loading.close()
         Object.assign(this.tips, {isShow: true, text: res.message})
         this.setTips()
+      }
+    },
+    refresh () {
+      this.goods_list = []
+      this.page_info.page_index = 1
+      this.get_activity()
+      // wx.stopPullDownRefresh()
+    },
+    loadmore () {
+      if (this.page_info.page_index < Math.ceil(this.page_info.totalCount * 1 / this.page_info.pageSize * 1)) {
+        this.page_info.page_index += 1
+        this.get_activity()
       }
     },
     rest_data () {
@@ -143,17 +147,11 @@ export default {
   },
 
   onPullDownRefresh () {
-    this.goods_list = []
-    this.page_info.page_index = 1
-    this.get_activity()
-    // wx.stopPullDownRefresh()
+    this.refresh()
   },
 
   onReachBottom () {
-    if (this.page_info.page_index < Math.ceil(this.page_info.totalCount * 1 / this.page_info.pageSize * 1)) {
-      this.page_info.page_index += 1
-      this.get_activity()
-    }
+    this.loadmore()
   },
 
   onLoad () {
